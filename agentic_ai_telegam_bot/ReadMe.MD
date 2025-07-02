@@ -5,7 +5,7 @@ Sends daily motivational quotes via Telegram bot.
 
 ## Setup
 
-1. **Create bot**: Message @BotFather, type `/newbot`
+1. **Create bot**: Head to your telegram Message @BotFather, type `/newbot`
  
 2. **Install**: `pip install requests schedule python-dotenv` 
 3. **Create .env file**:
