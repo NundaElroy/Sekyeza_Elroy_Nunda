@@ -5,7 +5,7 @@ import time
 import os
 import json
 from dotenv import load_dotenv
-
+#read the readMe before , for set up instructions 
 load_dotenv()
 
 BOT_TOKEN = os.getenv("BOT_TOKEN")
