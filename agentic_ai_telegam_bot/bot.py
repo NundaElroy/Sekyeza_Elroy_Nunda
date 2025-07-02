@@ -32,7 +32,7 @@ quotes = [
 
 # Get the directory where this script is located
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-STATE_FILE = os.path.join(SCRIPT_DIR, "quote_state.json")
+STATE_FILE = os.path.join(SCRIPT_DIR, "state.json")
 
 def send_message(text):
     url = f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage"
@@ -52,15 +52,15 @@ def get_next_quote():
     quote = quotes[index]
     next_index = (index + 1) % len(quotes)  # Loop back to 0 after last quote
     
-    # Save new state (preserve schedule_time if it exists)
+    # Save new state (preserve time if it exists)
     state_data = {"index": next_index}
     if os.path.exists(STATE_FILE):
         with open(STATE_FILE, "r") as f:
             existing_data = json.load(f)
-        if "schedule_time" in existing_data:
-            state_data["schedule_time"] = existing_data["schedule_time"]
+        if "time" in existing_data:
+            state_data["time"] = existing_data["time"]
     else:
-        state_data["schedule_time"] = "08:00"  # Default time
+        state_data["time"] = "09:00"  # Default time
     
     with open(STATE_FILE, "w") as f:
         json.dump(state_data, f)
@@ -68,13 +68,13 @@ def get_next_quote():
     return quote
 
 def get_schedule_time():
-    """Get the schedule time from the quote_state.json file"""
+    """Get the schedule time from the state.json file"""
     if not os.path.exists(STATE_FILE):
-        return "08:00"  # Default time
+        return "09:00"  # Default time
     
     with open(STATE_FILE, "r") as f:
         data = json.load(f)
-    return data.get("schedule_time", "08:00")
+    return data.get("time", "09:00")
 
 def send_daily_quote():
     quote = get_next_quote()
