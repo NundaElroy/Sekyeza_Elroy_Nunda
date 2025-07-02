@@ -42,7 +42,7 @@ BOT_TOKEN=your_token_here
 CHAT_ID=your_chat_id_here
 ```
 
-Replace `your_token_here` with the token you received from **@BotFather** and `your_chat_id_here` with your (you can follow on how to get it )chat ID.
+Replace `your_token_here` with the token you received from **@BotFather** and `your_chat_id_here` with your (you can follow on how to get it below)chat ID.
 
 ### 4. Get Your Chat ID
 NOTE FIRST SEND SOME MESSAGE TO YOUR BOT example hello this will help us to get the chat id 
