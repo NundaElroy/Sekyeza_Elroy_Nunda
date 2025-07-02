@@ -1,4 +1,4 @@
-Here's the updated and improved version of the `README.md` file:
+
 
 ---
 
@@ -11,10 +11,10 @@ Sends daily motivational quotes via a Telegram bot.
 ## Features
 
 - Sends one quote daily at a scheduled time (default: 9:00 AM).
-- Reads quotes from a list and tracks progress using `state.json`.
+- Reads quotes from a list and tracks progress using `quote_state.json`.
 - Loops back to the first quote after all quotes are sent.
 - Utilizes Python's `schedule` library for timing.
-- Allows editing the scheduled time in the `state.json` file using a specific format (e.g., `09:00` for single-digit hours).
+- Allows editing the scheduled time in the `quote_state.json` file using a specific format (e.g., `09:00` for single-digit hours).
 
 ---
 
@@ -70,7 +70,7 @@ To start the bot, execute:
 python bot.py
 ```
 
-The bot will send one quote daily at 9:00 AM by default. You can modify the scheduled time in the `state.json` file by editing the `"time"` field using the 24-hour format `HH:MM`. Ensure that single-digit hours are prefixed with a zero (e.g., `09:00`).
+The bot will send one quote daily at 9:00 AM by default. You can modify the scheduled time in the `quote_state.json` file by editing the `"time"` field using the 24-hour format `HH:MM`. Ensure that single-digit hours are prefixed with a zero (e.g., `09:00`).
 
 ---
 
